@@ -1,0 +1,922 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-04 06:36+0000\n"
+"PO-Revision-Date: 2019-10-08 09:56+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__api_url
+msgid "API URL"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__api_url
+msgid "API URL tooltip"
+msgstr "Rajapinnan verkko-osoite"
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__unsplash_access_key
+msgid "Access Key"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_taxcloud
+msgid "Account TaxCloud"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_accountant
+msgid "Accounting"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__alias_domain
+msgid "Alias Domain"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_product_margin
+msgid "Allow Product Margin"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_check_printing
+msgid "Allow check printing and deposits"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_google_calendar
+msgid "Allow the users to synchronize their calendar  with Google Calendar"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_base_import
+msgid "Allow users to import data from CSV/XLS/XLSX/ODS files"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__group_sale_pricelist
+msgid ""
+"Allows to manage different prices based on rules per category of customers.\n"
+"                Example: 10% for retailers, promotion of 5 EUR on this "
+"product, etc."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__group_multi_currency
+msgid "Allows to work in a multi currency environment"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_analytic_accounting
+msgid "Analytic Accounting"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_analytic_tags
+msgid "Analytic Tags"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid ""
+"Asiakasyrityksen ohjelmistorajapintatunnukset luoneen käyttäjän "
+"rajapintatunnus."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_asset
+msgid "Assets Management"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_voip
+msgid "Asterisk (VoIP)"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_google_drive
+msgid "Attach Google documents to any record"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_partner_autocomplete
+msgid "Auto-populate company data"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_invoice_extract
+msgid "Automate Bill Processing"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_currency_rate_live
+msgid "Automatic Currency Rates"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_yodlee
+msgid "Bank Interface - Sync your bank feeds automatically"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__account_bank_reconciliation_start
+msgid "Bank Reconciliation Threshold"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_budget
+msgid "Budget Management"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+#: model_terms:ir.ui.view,arch_db:netvisor.view_confirm_netvisor_send
+msgid "Cancel"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__tax_exigibility
+msgid "Cash Basis"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_cash_rounding
+msgid "Cash Rounding"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.view_confirm_netvisor_send
+msgid "Check and confirm Netvisor transfer"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_pad
+msgid "Collaborative Pads"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__invoice_reference_type
+msgid "Communication"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__company_id
+msgid "Company"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__has_chart_of_accounts
+msgid "Company has a chart of accounts"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model,name:netvisor.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.actions.act_window,name:netvisor.action_confirm_netvisor_send
+msgid "Confirm Netvisor action"
+msgstr "Vahvista tapahtuma"
+
+#. module: netvisor
+#: model:ir.actions.act_window,name:netvisor.action_confirm_sync_sales_payments
+msgid "Confirm Netvisor sync action"
+msgstr "Vahvista tapahtuma"
+
+#. module: netvisor
+#: model:ir.model,name:netvisor.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__report_footer
+msgid "Custom Report Footer"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__auth_signup_uninvited
+msgid "Customer Account"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__user_default_rights
+msgid "Default Access Rights"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__purchase_tax_id
+msgid "Default Purchase Tax"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__invoice_reference_type
+msgid "Default Reference Type on Invoices."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__sale_tax_id
+msgid "Default Sale Tax"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__digest_id
+msgid "Digest Email"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__digest_emails
+msgid "Digest Emails"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__group_products_in_bills
+msgid ""
+"Disable this option to use a simplified versions of vendor bills, where "
+"products are hidden."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__qr_code
+msgid "Display SEPA QR code"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__external_report_layout_id
+msgid "Document Template"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_reports
+msgid "Dynamic Reports"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_l10n_eu_service
+msgid "EU Digital Goods VAT"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__auth_signup_reset_password
+msgid "Enable password reset from Login page"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__currency_exchange_journal_id
+msgid "Exchange Gain or Loss Journal"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__external_email_server_default
+msgid "External Email Servers"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__fail_counter
+msgid "Fail Mail"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.actions.server,name:netvisor.sync_sales_payments_ir_actions_server
+#: model:ir.cron,cron_name:netvisor.sync_sales_payments
+#: model:ir.cron,name:netvisor.sync_sales_payments
+msgid "Fetch payments from Netvisor"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_fiscal_year
+msgid "Fiscal Years"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_reports_followup
+msgid "Follow-up Levels"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__report_footer
+msgid "Footer text displayed at the bottom of all reports."
+msgstr ""
+
+#. module: netvisor
+#: selection:netvisor.settings,auth_signup_uninvited:0
+msgid "Free sign up"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_google_spreadsheet
+msgid "Google Spreadsheet"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.view_trigger_sync_netvisor_sales_payments
+msgid "Hae suoritukset Netvisorista"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__has_accounting_entries
+msgid "Has Accounting Entries"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__alias_domain
+msgid ""
+"If you have setup a catch-all email domain redirected to the Odoo server, "
+"enter the domain name here."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_bank_statement_import_qif
+msgid "Import .qif files"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_bank_statement_import_csv
+msgid "Import in .csv format"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_bank_statement_import_ofx
+msgid "Import in .ofx format"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_bank_statement_import_camt
+msgid "Import in CAMT.053 format"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__partner_autocomplete_insufficient_credit
+msgid "Insufficient credit"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__auth_partner_key
+msgid "Integraatiokumppaniavain"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__auth_partner_key
+msgid "Integraatiokumppaniavain tooltip"
+msgstr "Integraatiokumppanin yksilöivä avain"
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid "Integraatiokumppanin yksilöivä avain"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__auth_partner_id
+msgid "Integraatiokumppanitunnus"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__auth_partner_id
+msgid "Integraatiokumppanitunnus tooltip"
+msgstr ""
+"Netvisor luo kumppanille tunnuksen ja välittää sen yhdessä kumppanin "
+"yksilöivän avaimen kanssa. \n"
+"\n"
+"Integraatiokumppani voi olla esimerkiksi ohjelmistotalo, joka tekee "
+"integraatioita Netvisoriin asiakkailleen"
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid "Integraatiokäyttäjän yksilöivä avain"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_intrastat
+msgid "Intrastat"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model,name:netvisor.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_payment
+msgid "Invoice Online Payment"
+msgstr ""
+
+#. module: netvisor
+#: selection:netvisor.settings,product_weight_in_lbs:0
+msgid "Kilogram"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_account_payment__received_from_netvisor
+msgid "Kirjattu Netvisorissa?"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid ""
+"Kumppanitunnus. Netvisor luo kumppanille tunnuksen ja välittää sen yhdessä "
+"kumppanin\n"
+"yksilöivän avaimen kanssa. Integraatiokumppani voi olla esimerkiksi "
+"ohjelmistotalo, joka\n"
+"tekee integraatioita Netvisoriin asiakkailleen."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_auth_ldap
+msgid "LDAP Authentication"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__show_line_subtotals_tax_selection
+msgid "Line Subtotals Tax Display"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_account_invoice__netvisor_delivered
+msgid "Lähetetty Netvisoriin?"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid "Lähettäjä"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__auth_sender
+msgid "Lähettäjän tunniste"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__auth_sender
+msgid "Lähettäjän tunniste tooltip"
+msgstr ""
+"Lähettävän järjestelmän yksilöllinen nimi/kuvaus.\n"
+"\n"
+"Yhdellä kumppanilla voi olla useampia järjestelmiä liitettynä Netvisoriin ja "
+"jokainen tulee nimetä yksiselitteisesti. \n"
+"\n"
+"Tieto helpottaa Netvisorin tukea ja tekniikkaa mahdollisissa "
+"selvitystilanteissa"
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.view_trigger_netvisor_purchases
+#: model_terms:ir.ui.view,arch_db:netvisor.view_trigger_netvisor_sales
+msgid "Lähetä Netvisoriin"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__currency_id
+msgid "Main currency of the company."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_inter_company_rules
+msgid "Manage Inter Company"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_multi_company
+msgid "Manage multiple companies"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_multi_currency
+msgid "Multi-Currencies"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid "Netvisor API"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_res_partner__netvisor_customer_id
+#: model:ir.model.fields,field_description:netvisor.field_res_users__netvisor_customer_id
+msgid "Netvisor asiakaskoodi"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid "Netvisor avaimet"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.actions.act_window,name:netvisor.netvisor_settings_action
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid "Netvisor configuration"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_account_invoice__netvisor_invoice_number
+msgid "Netvisor laskunro"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_account_invoice__netvisor_delivered_datetime
+msgid "Netvisor lähetysaika"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.ui.menu,name:netvisor.netvisor_settings_menu
+msgid "Netvisor settings"
+msgstr "Netvisor asetukset"
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_account_invoice__netvisor_data_identifier
+#: model:ir.model.fields,field_description:netvisor.field_account_payment__netvisor_key
+msgid "Netvisor tunniste"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_product_product__netvisor_product_id
+msgid "Netvisor tuotekoodi"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__company_registry_id
+msgid "Netvisor-asiakkaan Y-tunnus (integraatioiden kohdeyritys)"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__company_registry_id
+msgid "Netvisor-asiakkaan Y-tunnus tooltip"
+msgstr ""
+"Yrityksen y-tunnus, johon pyynnöt halutaan lähettää. \n"
+"\n"
+"Määrää yrityksen, johon pyynnöt kirjautuvat tai jonka tietoja haetaan. "
+"Yrityksen Netvisor-käyttäjällä, jonka ohjelmistorajapintatunnuksia "
+"käytetään, tulee olla oikeus tähän yritykseen"
+
+#. module: netvisor
+#: selection:netvisor.settings,auth_signup_uninvited:0
+msgid "On invitation"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__paperformat_id
+msgid "Paper format"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model,name:netvisor.model_account_payment
+msgid "Payments"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.view_confirm_sync_sales_payments
+msgid "Peruutan"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_plaid
+msgid "Plaid Connector"
+msgstr ""
+
+#. module: netvisor
+#: selection:netvisor.settings,product_weight_in_lbs:0
+msgid "Pound"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__invoice_is_print
+msgid "Print"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__snailmail_duplex
+msgid "Print Both sides"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__snailmail_color
+msgid "Print In Color"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model,name:netvisor.model_product_product
+msgid "Product"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_stock_packaging
+msgid "Product Packagings"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model,name:netvisor.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__auth_customer_id
+msgid "Rajapintakäyttäjän käyttäjätunniste"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__auth_customer_id
+msgid "Rajapintakäyttäjän käyttäjätunniste tooltip"
+msgstr ""
+"Lähettävän järjestelmän yksilöllinen nimi/kuvaus.\n"
+"\n"
+"Yhdellä kumppanilla voi olla useampia järjestelmiä liitettynä Netvisoriin ja "
+"jokainen tulee nimetä yksiselitteisesti. \n"
+"\n"
+"Tieto helpottaa Netvisorin tukea ja tekniikkaa mahdollisissa "
+"selvitystilanteissa"
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__authorization_key
+msgid ""
+"Rajapintakäyttäjän käyttöoikeusavain (saatavilla/luotavissa Netvisorissa)"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__authorization_key
+msgid "Rajapintakäyttäjän käyttöoikeusavain tooltip"
+msgstr "Integraatiokäyttäjän yksilöivä avain"
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_deferred_revenue
+msgid "Revenue Recognition"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_sepa
+msgid "SEPA Credit Transfer (SCT)"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid "Save"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.view_confirm_netvisor_send
+msgid "Send"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__invoice_is_email
+msgid "Send Email"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__company_share_partner
+msgid "Share partners to all companies"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__company_share_product
+msgid "Share product to all companies"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__company_share_partner
+msgid ""
+"Share your partners to all companies defined in your instance.\n"
+" * Checked : Partners are visible for every companies, even if a company is "
+"defined on the partner.\n"
+" * Unchecked : Each company can see only its partner (partners where company "
+"is defined). Partners not related to a company are visible for all companies."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__company_share_product
+msgid ""
+"Share your product to all companies defined in your instance.\n"
+" * Checked : Product are visible for every company, even if a company is "
+"defined on the partner.\n"
+" * Unchecked : Each company can see only its product (product where company "
+"is defined). Product not related to a company are visible for all companies."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__show_effect
+msgid "Show Effect"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_show_line_subtotals_tax_included
+msgid "Show line subtotals with taxes (B2C)"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_show_line_subtotals_tax_excluded
+msgid "Show line subtotals without taxes (B2B)"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_product_pricelist
+msgid "Show pricelists On Products"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_pricelist_item
+msgid "Show pricelists to customers"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid "Tallenna"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__tax_cash_basis_journal_id
+msgid "Tax Cash Basis Journal"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__tax_calculation_rounding_method
+msgid "Tax calculation rounding method"
+msgstr ""
+
+#. module: netvisor
+#: selection:netvisor.settings,show_line_subtotals_tax_selection:0
+msgid "Tax-Excluded"
+msgstr ""
+
+#. module: netvisor
+#: selection:netvisor.settings,show_line_subtotals_tax_selection:0
+msgid "Tax-Included"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__chart_template_id
+msgid "Template"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__auth_signup_template_user_id
+msgid "Template user for new users created through signup"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__currency_exchange_journal_id
+msgid ""
+"The accounting journal where automatic exchange differences will be "
+"registered"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__account_bank_reconciliation_start
+msgid ""
+"The bank reconciliation widget won't ask to reconcile payments older than "
+"this date.\n"
+"               This is useful if you install accounting after having used "
+"invoicing for some time and\n"
+"               don't want to reconcile all the past payments with bank "
+"statements."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__module_account_batch_payment
+msgid ""
+"This allows you grouping payments into a single batch and eases the "
+"reconciliation process.\n"
+"-This installs the account_batch_payment module."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_base_gengo
+msgid "Translate Your Website with Gengo"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_uom
+msgid "Units of Measure"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_web_unsplash
+msgid "Unsplash Image Library"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_sepa_direct_debit
+msgid "Use SEPA Direct Debit"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_batch_payment
+msgid "Use batch payments"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_auth_oauth
+msgid "Use external authentication providers (OAuth)"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_sale_pricelist
+msgid "Use pricelists to adapt your price per customers"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_products_in_bills
+msgid "Use products in vendor bills"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.view_confirm_sync_sales_payments
+msgid "Vahvista tietojen synkrointi"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.view_confirm_sync_sales_payments
+msgid "Vahvistan"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_product_variant
+msgid "Variants and Options"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_account_payment__received_from_netvisor_datetime
+msgid "Vastaanotettu Odooseen"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_warning_account
+msgid "Warnings in Invoices"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__product_weight_in_lbs
+msgid "Weight unit of measure"
+msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid ""
+"Yrityksen y-tunnus, johon pyynnöt halutaan lähettää. Määrää yrityksen, johon "
+"pyynnöt\n"
+"kirjautuvat tai jonka tietoja haetaan. Yrityksen Netvisor-käyttäjällä, "
+"jonka\n"
+"ohjelmistorajapintatunnuksia käytetään, tulee olla oikeus tähän yritykseen."
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model,name:netvisor.model_netvisor_invoice
+msgid "netvisor.invoice"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model,name:netvisor.model_netvisor_netvisor
+msgid "netvisor.netvisor"
+msgstr ""
+
+#. module: netvisor
+#: model:ir.model,name:netvisor.model_netvisor_settings
+msgid "netvisor.settings"
+msgstr ""

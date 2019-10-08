@@ -1,0 +1,370 @@
+<odoo>
+  <data>
+    <!-- Extends view: account.invoice_tree Netvisor status in sales invoices list -->
+    <record id="view_sales_treeview_netvisor_status" model="ir.ui.view">
+      <field name="name">Sent to Netvisor status</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_tree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='state']" position="after">
+          <field name="netvisor_delivered" readonly="1"/>
+        </xpath>
+        <xpath expr="//field[@name='netvisor_delivered']" position="after">
+          <field name="netvisor_delivered_datetime" readonly="1"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Extends view: account.invoice_tree Netvisor status in purchase invoices list -->
+    <record id="view_purchases_treeview_netvisor_status" model="ir.ui.view">
+      <field name="name">Sent to Netvisor status</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='state']" position="after">
+          <field name="netvisor_delivered" readonly="1"/>
+        </xpath>
+        <xpath expr="//field[@name='netvisor_delivered']" position="after">
+          <field name="netvisor_delivered_datetime" readonly="1"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Confirm Netvisor send dialog view -->
+    <record id="view_confirm_netvisor_send" model="ir.ui.view">
+      <field name="name">Confirm send to Netvisor form</field>
+      <field name="model">account.invoice</field>
+      <field name="arch" type="xml">
+        <form string="Check and confirm Netvisor transfer">
+          <footer>
+            <button string='Send' name="send_invoice_to_netvisor" type="object" class="btn-primary"/>
+            <button string="Cancel" class="btn-secondary" special="cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <!-- Confirm Netvisor send action -->
+    <record id="action_confirm_netvisor_send" model="ir.actions.act_window">
+      <field name="name">Confirm Netvisor action</field>
+      <field name="res_model">account.invoice</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="view_confirm_netvisor_send"/>
+      <!--<field name="context">{'default_invoice_ids': [(4, active_id, None)]}</field>-->
+      <field name="target">new</field>
+    </record>
+
+    <!-- Extends view: account.invoice_form Button in single sales invoice view -->
+    <record id="view_trigger_netvisor_sales" model="ir.ui.view">
+      <field name="name">Send to Netvisor button</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_form"/>
+      <field name="arch" type="xml">
+        <header>
+          <field name="netvisor_delivered" invisible="1"/> 
+          <button name="%(action_confirm_netvisor_send)d" string="Lähetä Netvisoriin" type="action" attrs="{
+              'invisible': [
+                '|',
+                ('state','!=','open'),
+                ('netvisor_delivered', '=', True)
+              ]
+            }" groups="account.group_account_invoice"/>
+        </header>
+      </field>
+    </record>
+
+    <!-- Extends view: account.invoice_supplier_form Button in single purchase invoice view -->
+    <!--
+    <record id="view_trigger_netvisor_purchases" model="ir.ui.view">
+      <field name="name">Send to Netvisor button</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_supplier_form"/>
+      <field name="arch" type="xml">
+        <header>
+          <field name="netvisor_delivered" invisible="1"/> 
+          <button name="%(action_confirm_netvisor_send)d" string="Lähetä Netvisoriin" type="action" attrs="{
+              'invisible': [
+                '|',
+                ('state','!=','open'),
+                ('netvisor_delivered', '=', True)
+              ]
+            }" groups="account.group_account_invoice"/>
+        </header>
+      </field>
+    </record>
+    -->
+
+    <!-- Extends view: account.product_product_view_tree Netvisor product ID-->
+    <record id="view_product_treeview_netvisor_product_id" model="ir.ui.view">
+      <field name="name">Netvisor product reference</field>
+      <field name="model">product.product</field>
+      <field name="inherit_id" ref="account.product_product_view_tree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='supplier_taxes_id']" position="after">
+          <field name="netvisor_product_id" readonly="1"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Extends view: res.partner.form Netvisor customer ID in customer view -->
+    <record id="view_customer_netvisor_id" model="ir.ui.view">
+      <field name="name">Netvisor customer ID</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='vat']" position="after">
+          <field name="netvisor_customer_id" />
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Extends view: product.product.form Netvisor product ID in product view -->
+    <record id="view_product_netvisor_id" model="ir.ui.view">
+      <field name="name">Netvisor product ID</field>
+      <field name="model">product.product</field>
+      <field name="inherit_id" ref="product.product_normal_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='barcode']" position="before">
+          <field name="netvisor_product_id" />
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Extends view: res.partner.form Netvisor vendor ID in vendor view -->
+    <!--
+    <record id="view_vendor_netvisor_id" model="ir.ui.view">
+      <field name="name">Netvisor vendor ID</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='netvisor_customer_id']" position="after">
+          <field name="netvisor_vendor_id" />
+        </xpath>
+      </field>
+    </record>
+    -->
+
+    <!-- Confirm Netvisor sync payments dialog view -->
+    <!--
+    <record id="view_confirm_sync_sales_payments" model="ir.ui.view">
+      <field name="name">Confirm sync from Netvisor form</field>
+      <field name="model">account.invoice</field>
+      <field name="arch" type="xml">
+        <form string="Vahvista tietojen synkrointi">
+          <footer>
+            <button string='Vahvistan' name="sync_sales_payments" type="object" class="btn-primary"/>
+            <button string="Peruutan" class="btn-secondary" special="cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+    -->
+
+    <!-- Confirm Netvisor sync payments action -->
+    <!--
+    <record id="action_confirm_sync_sales_payments" model="ir.actions.act_window">
+      <field name="name">Confirm Netvisor sync action</field>
+      <field name="res_model">account.invoice</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="view_confirm_sync_sales_payments"/>
+      <field name="target">new</field>
+    </record>
+    -->
+
+    <!-- Extends view: account.payment Button in list payments view -->
+    <!--
+    <record id="view_trigger_sync_netvisor_sales_payments" model="ir.ui.view">
+      <field name="name">Sync payments</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_form"/>
+      <field name="arch" type="xml">
+        <header>
+          <field name="netvisor_delivered" invisible="1"/> 
+          <button name="%(action_confirm_sync_sales_payments)d" string="Hae suoritukset Netvisorista" attrs="{
+              'invisible': [
+                ('state','=','open'),
+                ('netvisor_delivered', '!=', True)
+              ]
+            }" type="action" />
+        </header>
+      </field>
+    </record>
+    -->
+
+    <!-- Extends view: account.invoice_form Netvisor invoice ID in invoice view -->
+    <record id="view_netvisor_invoice_id_in_invoice" model="ir.ui.view">
+      <field name="name">Netvisor invoice ID</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_form"/>
+      <field name="arch" type="xml">
+        <!--<xpath expr="//field[@name='payment_term_id']" position="after">
+          <field name="netvisor_data_identifier" readonly="1"/>
+        </xpath>-->
+        <xpath expr="//field[@name='payment_term_id']" position="after">
+          <field name="netvisor_invoice_number" readonly="1"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Purchase invoices -->
+    <!-- Confirm Netvisor get purchase invoices dialog view -->
+    <!--
+    <record id="view_confirm_get_purchase_invoices" model="ir.ui.view">
+      <field name="name">Confirm send to Netvisor form</field>
+      <field name="model">account.invoice</field>
+      <field name="arch" type="xml">
+        <form string="Confirm Netvisor transfer">
+          <footer>
+            <button string='Send' name="get_purchase_invoices" type="object" class="btn-primary"/>
+            <button string="Cancel" class="btn-secondary" special="cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+    -->
+
+    <!-- Confirm Netvisor send action -->
+    <!--
+    <record id="action_confirm_get_purchase_invoices" model="ir.actions.act_window">
+      <field name="name">Confirm Netvisor action</field>
+      <field name="res_model">account.invoice</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="view_confirm_get_purchase_invoices"/>
+      <field name="target">new</field>
+    </record>
+    -->
+
+    <!-- Extends view: account.invoice_form Button in single sales invoice view -->
+    <!--
+    <record id="view_trigger_get_purchase_invoices" model="ir.ui.view">
+      <field name="name">Get purchase invoices</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_form"/>
+      <field name="arch" type="xml">
+        <header>
+          <button name="%(action_confirm_get_purchase_invoices)d" string="Hae ostolaskut Netvisorista" type="action" attrs="{}"/>
+        </header>
+      </field>
+    </record>
+    -->
+
+    <!--
+      Module settings view
+    -->
+    <record id="netvisor_configuration" model="ir.ui.view">
+      <field name="name">Netvisor configuration</field>
+      <field name="model">netvisor.settings</field>
+      <field name="arch" type="xml">
+        <form string="Netvisor configuration" class="oe_form_configuration">
+          <group string="Lähettäjä">
+            <div>
+              <label for="auth_sender"/>
+              <field name="auth_sender"/>
+            </div>
+          </group>
+          <group string="Netvisor avaimet">
+            <div>
+              <div>
+                <label for="auth_partner_id"/>
+                <field name="auth_partner_id"/>
+                <hr/>
+              </div>
+              <div>
+                <label for="auth_partner_key"/>
+                <field name="auth_partner_key"/>
+                <hr/>
+              </div>
+              <div>
+                <label for="authorization_key"/>
+                <field name="authorization_key"/>
+                <hr/>
+              </div>
+              <div>
+                <label for="auth_customer_id"/>
+                <field name="auth_customer_id"/>
+                <hr/>
+              </div>
+              <div>
+                <label for="company_registry_id"/>
+                <field name="company_registry_id"/>
+                <hr/>
+              </div>
+            </div>
+          </group>
+          <group string="Netvisor API">
+            <div>
+              <div>
+                <label for="api_url"/>
+                <field name="api_url"/>
+              </div>
+            </div>
+          </group>
+          <group string="Tallenna">
+            <div>
+              <div>
+                <button string="Save" type="object" name="execute" class="oe_highlight"/>
+                <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+              </div>
+            </div>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!--
+      Module settings action
+    -->
+    <record id="netvisor_settings_action" model="ir.actions.act_window">
+      <field name="name">Netvisor configuration</field>
+      <field name="res_model">netvisor.settings</field>
+      <field name="view_id" ref="netvisor_configuration"/>
+      <field name="view_mode">form</field>
+      <field name="target">inline</field>
+    </record>
+
+    <!--
+      Module settings menu item
+    -->
+    <menuitem id="netvisor_settings_menu" name="Netvisor settings" parent="base.menu_administration" action="netvisor_settings_action"/>
+
+    <!-- explicit list view definition -->
+    <!-- <record model="ir.ui.view" id="netvisor.list"> <field name="name">netvisor list</field> <field name="model">netvisor.netvisor</field> <field name="arch" type="xml"> <tree> <field name="name"/> <field name="value"/> <field name="value2"/> </tree>
+    </field> </record> -->
+
+    <!-- actions opening views on models -->
+    <!-- <record model="ir.actions.act_window" id="netvisor.action_window"> <field name="name">netvisor window</field> <field name="res_model">netvisor.netvisor</field> <field name="view_mode">tree,form</field> </record> -->
+
+    <!-- server action to the one above -->
+    <!-- <record model="ir.actions.server" id="netvisor.action_server"> <field name="name">netvisor server</field> <field name="model_id" ref="model_netvisor_netvisor"/> <field name="state">code</field> <field name="code"> action = { "type":
+    "ir.actions.act_window", "view_mode": "tree,form", "res_model": self._name, } </field> </record> -->
+
+    <!-- Top menu item -->
+    <!-- <menuitem name="netvisor" id="netvisor.menu_root"/> -->
+    <!-- menu categories -->
+    <!-- <menuitem name="Menu 1" id="netvisor.menu_1" parent="netvisor.menu_root"/> <menuitem name="Menu 2" id="netvisor.menu_2" parent="netvisor.menu_root"/> -->
+    <!-- actions -->
+    <!-- <menuitem name="List" id="netvisor.menu_1_list" parent="netvisor.menu_1" action="netvisor.action_window"/> <menuitem name="Server to list" id="netvisor" parent="netvisor.menu_2" action="netvisor.action_server"/> -->  
+  </data>
+
+  <!-- CRON -->
+  <data noupdate="1">
+    <record id="sync_sales_payments" model="ir.cron">
+      <field name="name">Fetch payments from Netvisor</field>
+      <field name="model" eval="'account.invoice'" />
+      <field name="model_id">3</field>
+      <field name="active" eval="True" />
+      <field name="user_id" ref="base.user_root" />
+      <field name="interval_number">3</field>
+      <field name="interval_type">hours</field>
+      <field name="numbercall">-1</field>
+      <field name="doall">0</field>
+      <!--<field name="nextcall" >2016-12-31 23:59:59</field>-->
+      <field name="function" eval="'sync_sales_payments'" />
+      <!--<field name="priority" eval="5" />-->
+    </record>
+  </data>
+
+</odoo>
