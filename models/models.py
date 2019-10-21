@@ -8,7 +8,7 @@ import requests
 import xmltodict
 import json
 
-from addons.netvisor.controllers import controllers
+from odoo.addons.netvisor.controllers import controllers
 from odoo import api, fields, models
 
 class NetvisorSalesPayment(models.Model):
