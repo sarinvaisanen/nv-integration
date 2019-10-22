@@ -20,14 +20,14 @@ class Settings(models.TransientModel):
     
     # Netvisor enabled features
     # Sales invoices
-    sales_invoices_manual_transfer = fields.Boolean('Myyntilaskujen manuaalinen siirto', required=True, default=False, help='Myyntilaskujen manuaalinen siirto tooltip')
-    sales_invoices_automatic_transfer = fields.Boolean('Myyntilaskujen automaattinen siirto', required=True, default=False, help='Myyntilaskujen automaattinen siirto tooltip')
+    sales_invoices_manual_transfer = fields.Boolean('Myyntilaskujen manuaalinen siirto', help='Myyntilaskujen manuaalinen siirto tooltip')
+    sales_invoices_automatic_transfer = fields.Boolean('Myyntilaskujen automaattinen siirto', help='Myyntilaskujen automaattinen siirto tooltip')
     # Customers
-    customers_manual_transfer = fields.Boolean('Asiakkaiden manuaalinen siirto', required=True, default=False, help='Asiakkaiden manuaalinen siirto tooltip')
-    customers_automatic_transfer = fields.Boolean('Asiakkaiden automaattinen siirto', required=True, default=False, help='Asiakkaiden automaattinen siirto tooltip')
+    customers_manual_transfer = fields.Boolean('Asiakkaiden manuaalinen siirto', help='Asiakkaiden manuaalinen siirto tooltip')
+    customers_automatic_transfer = fields.Boolean('Asiakkaiden automaattinen siirto', help='Asiakkaiden automaattinen siirto tooltip')
     # Products
-    products_manual_transfer = fields.Boolean('Tuotteiden manuaalinen siirto', required=True, default=False, help='Tuotteiden manuaalinen siirto tooltip')
-    products_automatic_transfer = fields.Boolean('Tuotteiden automaattinen siirto', required=True, default=False, help='Tuotteiden automaattinen siirto tooltip')
+    products_manual_transfer = fields.Boolean('Tuotteiden manuaalinen siirto',help='Tuotteiden manuaalinen siirto tooltip')
+    products_automatic_transfer = fields.Boolean('Tuotteiden automaattinen siirto', help='Tuotteiden automaattinen siirto tooltip')
 
     def get_values(self):
         res = super(Settings, self).get_values()
