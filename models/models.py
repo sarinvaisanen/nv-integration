@@ -95,7 +95,7 @@ class NetvisorInvoice(models.Model):
         invoice_type = args.get('type')
 
         # Sales invoice
-        if invoice_type == 'out_invoice':
+        if invoice_type == 'out_invoice' or 'out_refund':
             root = controllers.Netvisor.xml_from_sales_invoice(record)
             endpoint = f'{api_url}/salesinvoice.nv?method=add'
             
