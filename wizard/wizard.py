@@ -17,6 +17,17 @@ class Settings(models.TransientModel):
     
     # Netvisor general settings
     api_url = fields.Char('API URL', required=True, readonly=False, help='API URL tooltip')
+    
+    # Netvisor enabled features
+    # Sales invoices
+    sales_invoices_manual_transfer = fields.Boolean('Myyntilaskujen manuaalinen siirto', required=True, default=False, help='Myyntilaskujen manuaalinen siirto tooltip')
+    sales_invoices_automatic_transfer = fields.Boolean('Myyntilaskujen automaattinen siirto', required=True, default=False, help='Myyntilaskujen automaattinen siirto tooltip')
+    # Customers
+    customers_manual_transfer = fields.Boolean('Asiakkaiden manuaalinen siirto', required=True, default=False, help='Asiakkaiden manuaalinen siirto tooltip')
+    customers_automatic_transfer = fields.Boolean('Asiakkaiden automaattinen siirto', required=True, default=False, help='Asiakkaiden automaattinen siirto tooltip')
+    # Products
+    products_manual_transfer = fields.Boolean('Tuotteiden manuaalinen siirto', required=True, default=False, help='Tuotteiden manuaalinen siirto tooltip')
+    products_automatic_transfer = fields.Boolean('Tuotteiden automaattinen siirto', required=True, default=False, help='Tuotteiden automaattinen siirto tooltip')
 
     def get_values(self):
         res = super(Settings, self).get_values()
