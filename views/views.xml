@@ -302,6 +302,27 @@
               </div>
             </div>
           </group>
+          <group string="Netvisor enabled features">
+            <div>
+              <label for="sales_invoices_manual_transfer"/>
+              <field name="sales_invoices_manual_transfer" widget="boolean_switch" />
+
+              <label for="sales_invoices_automatic_transfer"/>
+              <field name="sales_invoices_automatic_transfer" widget="boolean_switch"/>
+
+              <label for="customers_manual_transfer"/>
+              <field name="customers_manual_transfer" widget="boolean_switch"/>
+              
+              <label for="customers_automatic_transfer"/>
+              <field name="customers_automatic_transfer" widget="boolean_switch"/>
+
+              <label for="products_manual_transfer"/>
+              <field name="products_manual_transfer" widget="boolean_switch"/>
+
+              <label for="products_automatic_transfer"/>
+              <field name="products_automatic_transfer" widget="boolean_switch"/>
+            </div>
+          </group>
           <group string="Tallenna">
             <div>
               <div>
@@ -357,13 +378,11 @@
       <field name="model_id">3</field>
       <field name="active" eval="True" />
       <field name="user_id" ref="base.user_root" />
-      <field name="interval_number">3</field>
+      <field name="interval_number">1</field>
       <field name="interval_type">hours</field>
       <field name="numbercall">-1</field>
       <field name="doall">0</field>
-      <!--<field name="nextcall" >2016-12-31 23:59:59</field>-->
       <field name="function" eval="'sync_sales_payments'" />
-      <!--<field name="priority" eval="5" />-->
     </record>
   </data>
 
