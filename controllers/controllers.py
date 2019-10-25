@@ -344,8 +344,8 @@ class Netvisor(http.Controller):
 
             productVatPercentage = ET.SubElement(salesInvoiceProductLine, 'productvatpercentage')
             productVatPercentage.set('vatcode', 'KOMY')
-            
-            vatPercentage = record.invoice_line_ids.invoice_line_tax_ids.amount
+                        
+            vatPercentage = next((str(item.invoice_line_tax_ids.amount) for item in record.invoice_line_ids if item.id == line.id), False)
             productVatPercentage.text = str(vatPercentage)
 
             salesInvoiceProductLineQuantity = ET.SubElement(salesInvoiceProductLine, 'salesinvoiceproductlinequantity')
