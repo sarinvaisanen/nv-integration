@@ -274,7 +274,7 @@ class Netvisor(http.Controller):
 
         # Not required. Reference number format if given.
         salesInvoiceReferenceNumber = ET.SubElement(salesInvoice, 'salesinvoicereferencenumber')
-        salesInvoiceReferenceNumber.text = record.reference
+        salesInvoiceReferenceNumber.text = '12 34561' # str(record.reference)
 
         salesInvoiceAmount = ET.SubElement(salesInvoice, 'salesinvoiceamount')
         salesInvoiceAmount.text = str(record.amount_untaxed_signed)
@@ -344,7 +344,9 @@ class Netvisor(http.Controller):
 
             productVatPercentage = ET.SubElement(salesInvoiceProductLine, 'productvatpercentage')
             productVatPercentage.set('vatcode', 'KOMY')
-            productVatPercentage.text = next((str(x.tax_id.amount) for x in record.tax_line_ids if x.id == line.id), '24')
+            
+            vatPercentage = record.invoice_line_ids.invoice_line_tax_ids.amount
+            productVatPercentage.text = str(vatPercentage)
 
             salesInvoiceProductLineQuantity = ET.SubElement(salesInvoiceProductLine, 'salesinvoiceproductlinequantity')
             salesInvoiceProductLineQuantity.text = str(line.quantity)

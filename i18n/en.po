@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-04 06:36+0000\n"
-"PO-Revision-Date: 2019-10-17 13:56+0300\n"
+"POT-Creation-Date: 2019-10-22 07:44+0000\n"
+"PO-Revision-Date: 2019-10-22 10:49+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -91,11 +91,24 @@ msgid "Analytic Tags"
 msgstr ""
 
 #. module: netvisor
-#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
-msgid ""
-"Asiakasyrityksen ohjelmistorajapintatunnukset luoneen käyttäjän "
-"rajapintatunnus."
-msgstr ""
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__customers_automatic_transfer
+msgid "Asiakkaiden automaattinen siirto"
+msgstr "Automatic transfer of customer data"
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__customers_automatic_transfer
+msgid "Asiakkaiden automaattinen siirto tooltip"
+msgstr "Enables automatic transfers of customer data between Odoo and Netvisor"
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__customers_manual_transfer
+msgid "Asiakkaiden manuaalinen siirto"
+msgstr "Manual transfers of customer data"
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__customers_manual_transfer
+msgid "Asiakkaiden manuaalinen siirto tooltip"
+msgstr "Enables manual transfers of customer data between Odoo and Netvisor"
 
 #. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_asset
@@ -184,18 +197,8 @@ msgid "Company has a chart of accounts"
 msgstr ""
 
 #. module: netvisor
-#: model:ir.model,name:netvisor.model_res_config_settings
-msgid "Config Settings"
-msgstr ""
-
-#. module: netvisor
 #: model:ir.actions.act_window,name:netvisor.action_confirm_netvisor_send
 msgid "Confirm Netvisor action"
-msgstr ""
-
-#. module: netvisor
-#: model:ir.actions.act_window,name:netvisor.action_confirm_sync_sales_payments
-msgid "Confirm Netvisor sync action"
 msgstr ""
 
 #. module: netvisor
@@ -343,11 +346,6 @@ msgid "Google Spreadsheet"
 msgstr ""
 
 #. module: netvisor
-#: model_terms:ir.ui.view,arch_db:netvisor.view_trigger_sync_netvisor_sales_payments
-msgid "Hae suoritukset Netvisorista"
-msgstr "Get payments from Netvisor"
-
-#. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__has_accounting_entries
 msgid "Has Accounting Entries"
 msgstr ""
@@ -400,13 +398,6 @@ msgid "Integraatiokumppaniavain tooltip"
 msgstr "Access key of the integration partner"
 
 #. module: netvisor
-#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
-#, fuzzy
-#| msgid "Integraatiokumppaniavain"
-msgid "Integraatiokumppanin yksilöivä avain"
-msgstr "Integration partner key"
-
-#. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__auth_partner_id
 msgid "Integraatiokumppanitunnus"
 msgstr "Integration partner ID"
@@ -415,11 +406,6 @@ msgstr "Integration partner ID"
 #: model:ir.model.fields,help:netvisor.field_netvisor_settings__auth_partner_id
 msgid "Integraatiokumppanitunnus tooltip"
 msgstr "Unique ID of the Integration partner"
-
-#. module: netvisor
-#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
-msgid "Integraatiokäyttäjän yksilöivä avain"
-msgstr ""
 
 #. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_intrastat
@@ -445,16 +431,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:netvisor.field_account_payment__received_from_netvisor
 msgid "Kirjattu Netvisorissa?"
 msgstr "Created in Netvisor?"
-
-#. module: netvisor
-#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
-msgid ""
-"Kumppanitunnus. Netvisor luo kumppanille tunnuksen ja välittää sen yhdessä "
-"kumppanin\n"
-"yksilöivän avaimen kanssa. Integraatiokumppani voi olla esimerkiksi "
-"ohjelmistotalo, joka\n"
-"tekee integraatioita Netvisoriin asiakkailleen."
-msgstr ""
 
 #. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_auth_ldap
@@ -504,7 +480,6 @@ msgid "Lähettäjän tunniste tooltip"
 msgstr "Sender identifier"
 
 #. module: netvisor
-#: model_terms:ir.ui.view,arch_db:netvisor.view_trigger_netvisor_purchases
 #: model_terms:ir.ui.view,arch_db:netvisor.view_trigger_netvisor_sales
 msgid "Lähetä Netvisoriin"
 msgstr "Send to Netvisor"
@@ -530,9 +505,31 @@ msgid "Multi-Currencies"
 msgstr ""
 
 #. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__sales_invoices_automatic_transfer
+msgid "Myyntilaskujen automaattinen siirto"
+msgstr "Automatic transfer of customer data"
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__sales_invoices_automatic_transfer
+msgid "Myyntilaskujen automaattinen siirto tooltip"
+msgstr ""
+"Enables automatic transfers of sales invoice data between Odoo and Netvisor"
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__sales_invoices_manual_transfer
+msgid "Myyntilaskujen manuaalinen siirto"
+msgstr "Manual transfer of customer data"
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__sales_invoices_manual_transfer
+msgid "Myyntilaskujen manuaalinen siirto tooltip"
+msgstr ""
+"Enables manual transfers of sales invoice data between Odoo and Netvisor"
+
+#. module: netvisor
 #: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
 msgid "Netvisor API"
-msgstr ""
+msgstr "API"
 
 #. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_res_partner__netvisor_customer_id
@@ -543,13 +540,18 @@ msgstr "Netvisor customer code"
 #. module: netvisor
 #: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
 msgid "Netvisor avaimet"
-msgstr "Netvisor access keys"
+msgstr "Access keys"
 
 #. module: netvisor
 #: model:ir.actions.act_window,name:netvisor.netvisor_settings_action
 #: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
 msgid "Netvisor configuration"
 msgstr ""
+
+#. module: netvisor
+#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
+msgid "Netvisor enabled features"
+msgstr "Enabled Features"
 
 #. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_account_invoice__netvisor_invoice_number
@@ -565,6 +567,14 @@ msgstr "Netvisor delivery time"
 #: model:ir.ui.menu,name:netvisor.netvisor_settings_menu
 msgid "Netvisor settings"
 msgstr ""
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_res_partner__netvisor_vendor_id
+#: model:ir.model.fields,field_description:netvisor.field_res_users__netvisor_vendor_id
+#, fuzzy
+#| msgid "Netvisor tuotekoodi"
+msgid "Netvisor toimittajakoodi"
+msgstr "Netvisor product code"
 
 #. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_account_invoice__netvisor_data_identifier
@@ -605,11 +615,6 @@ msgid "Payments"
 msgstr ""
 
 #. module: netvisor
-#: model_terms:ir.ui.view,arch_db:netvisor.view_confirm_sync_sales_payments
-msgid "Peruutan"
-msgstr "Cancel"
-
-#. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__module_account_plaid
 msgid "Plaid Connector"
 msgstr ""
@@ -642,11 +647,6 @@ msgstr ""
 #. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_stock_packaging
 msgid "Product Packagings"
-msgstr ""
-
-#. module: netvisor
-#: model:ir.model,name:netvisor.model_product_template
-msgid "Product Template"
 msgstr ""
 
 #. module: netvisor
@@ -822,6 +822,26 @@ msgid "Translate Your Website with Gengo"
 msgstr ""
 
 #. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__products_automatic_transfer
+msgid "Tuotteiden automaattinen siirto"
+msgstr "Automatic transfer of product data"
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__products_automatic_transfer
+msgid "Tuotteiden automaattinen siirto tooltip"
+msgstr "Enables automatic transfers of product data between Odoo and Netvisor"
+
+#. module: netvisor
+#: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__products_manual_transfer
+msgid "Tuotteiden manuaalinen siirto"
+msgstr "Manual transfer of customer data"
+
+#. module: netvisor
+#: model:ir.model.fields,help:netvisor.field_netvisor_settings__products_manual_transfer
+msgid "Tuotteiden manuaalinen siirto tooltip"
+msgstr "Enables manual transfers of product data between Odoo and Netvisor"
+
+#. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_uom
 msgid "Units of Measure"
 msgstr ""
@@ -857,16 +877,6 @@ msgid "Use products in vendor bills"
 msgstr ""
 
 #. module: netvisor
-#: model_terms:ir.ui.view,arch_db:netvisor.view_confirm_sync_sales_payments
-msgid "Vahvista tietojen synkrointi"
-msgstr "Confirm data transfer"
-
-#. module: netvisor
-#: model_terms:ir.ui.view,arch_db:netvisor.view_confirm_sync_sales_payments
-msgid "Vahvistan"
-msgstr "Confirm"
-
-#. module: netvisor
 #: model:ir.model.fields,field_description:netvisor.field_netvisor_settings__group_product_variant
 msgid "Variants and Options"
 msgstr ""
@@ -887,26 +897,23 @@ msgid "Weight unit of measure"
 msgstr ""
 
 #. module: netvisor
-#: model_terms:ir.ui.view,arch_db:netvisor.netvisor_configuration
-msgid ""
-"Yrityksen y-tunnus, johon pyynnöt halutaan lähettää. Määrää yrityksen, johon "
-"pyynnöt\n"
-"kirjautuvat tai jonka tietoja haetaan. Yrityksen Netvisor-käyttäjällä, "
-"jonka\n"
-"ohjelmistorajapintatunnuksia käytetään, tulee olla oikeus tähän yritykseen."
-msgstr ""
-
-#. module: netvisor
-#: model:ir.model,name:netvisor.model_netvisor_invoice
-msgid "netvisor.invoice"
-msgstr ""
-
-#. module: netvisor
-#: model:ir.model,name:netvisor.model_netvisor_netvisor
-msgid "netvisor.netvisor"
-msgstr ""
-
-#. module: netvisor
 #: model:ir.model,name:netvisor.model_netvisor_settings
 msgid "netvisor.settings"
 msgstr ""
+
+#~ msgid "Hae suoritukset Netvisorista"
+#~ msgstr "Get payments from Netvisor"
+
+#, fuzzy
+#~| msgid "Integraatiokumppaniavain"
+#~ msgid "Integraatiokumppanin yksilöivä avain"
+#~ msgstr "Integration partner key"
+
+#~ msgid "Peruutan"
+#~ msgstr "Cancel"
+
+#~ msgid "Vahvista tietojen synkrointi"
+#~ msgstr "Confirm data transfer"
+
+#~ msgid "Vahvistan"
+#~ msgstr "Confirm"
