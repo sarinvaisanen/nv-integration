@@ -350,6 +350,9 @@ class Netvisor(http.Controller):
 
             salesInvoiceProductLineQuantity = ET.SubElement(salesInvoiceProductLine, 'salesinvoiceproductlinequantity')
             salesInvoiceProductLineQuantity.text = str(line.quantity)
+                        
+            salesInvoiceProductLineDiscountPercentage = ET.SubElement(salesInvoiceProductLine, 'salesinvoiceproductlinediscountpercentage')
+            salesInvoiceProductLineDiscountPercentage.text = str(line.discount)
 
             """
             dimension = ET.SubElement(salesInvoiceProductLine, 'dimension')
