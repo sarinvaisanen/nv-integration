@@ -332,8 +332,8 @@ class Netvisor(http.Controller):
             
             if line.display_type == 'line_section':
                 # Line section type
-                salesInvoiceProductLine = ET.SubElement(invoiceLine, 'salesinvoicecommentline')
-                line_comment = ET.SubElement(salesInvoiceProductLine, 'comment')
+                sales_invoice_comment_line = ET.SubElement(invoiceLine, 'salesinvoicecommentline')
+                line_comment = ET.SubElement(sales_invoice_comment_line, 'comment')
                 line_comment.text = line.name
                 
             else:
@@ -375,7 +375,7 @@ class Netvisor(http.Controller):
             invoice_lines.append(comment_line)
 
         # TODO: Invoice voucher lines? Meaning?
-
+        ET.dump(root)
         return root
     
     
