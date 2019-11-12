@@ -329,46 +329,38 @@ class Netvisor(http.Controller):
 
         for line in record.invoice_line_ids:
             invoiceLine = ET.SubElement(invoice_lines, 'invoiceLine')
-            salesInvoiceProductLine = ET.SubElement(invoiceLine, 'salesinvoiceproductline')
+            
+            if line.display_type == 'line_section':
+                # Line section type
+                salesInvoiceProductLine = ET.SubElement(invoiceLine, 'salesinvoicecommentline')
+                line_comment = ET.SubElement(salesInvoiceProductLine, 'comment')
+                line_comment.text = line.name
+                
+            else:
+                # Standard product line type
+                salesInvoiceProductLine = ET.SubElement(invoiceLine, 'salesinvoiceproductline')
+                productIdentifier = ET.SubElement(salesInvoiceProductLine, 'productidentifier')
+                productIdentifier.set('type', 'customer')
+                productIdentifier.text = str(line.product_id.netvisor_product_id)
 
-            productIdentifier = ET.SubElement(salesInvoiceProductLine, 'productidentifier')
-            productIdentifier.set('type', 'customer')
-            productIdentifier.text = str(line.product_id.netvisor_product_id)
+                productName = ET.SubElement(salesInvoiceProductLine, 'productname')
+                productName.text = line.name
 
-            productName = ET.SubElement(salesInvoiceProductLine, 'productname')
-            productName.text = line.name
+                productunitPrice = ET.SubElement(salesInvoiceProductLine, 'productunitprice')
+                productunitPrice.set('type', 'net')
+                productunitPrice.text = str(line.price_unit)
 
-            productunitPrice = ET.SubElement(salesInvoiceProductLine, 'productunitprice')
-            productunitPrice.set('type', 'net')
-            productunitPrice.text = str(line.price_unit)
+                productVatPercentage = ET.SubElement(salesInvoiceProductLine, 'productvatpercentage')
+                productVatPercentage.set('vatcode', 'KOMY')
+                            
+                vatPercentage = next((str(item.invoice_line_tax_ids.amount) for item in record.invoice_line_ids if item.id == line.id), False)
+                productVatPercentage.text = str(vatPercentage)
 
-            productVatPercentage = ET.SubElement(salesInvoiceProductLine, 'productvatpercentage')
-            productVatPercentage.set('vatcode', 'KOMY')
-                        
-            vatPercentage = next((str(item.invoice_line_tax_ids.amount) for item in record.invoice_line_ids if item.id == line.id), False)
-            productVatPercentage.text = str(vatPercentage)
-
-            salesInvoiceProductLineQuantity = ET.SubElement(salesInvoiceProductLine, 'salesinvoiceproductlinequantity')
-            salesInvoiceProductLineQuantity.text = str(line.quantity)
-                        
-            salesInvoiceProductLineDiscountPercentage = ET.SubElement(salesInvoiceProductLine, 'salesinvoiceproductlinediscountpercentage')
-            salesInvoiceProductLineDiscountPercentage.text = str(line.discount)
-
-            """
-            dimension = ET.SubElement(salesInvoiceProductLine, 'dimension')
-
-            dimensionVolumeName = ET.SubElement(dimension, 'dimensionname')
-            dimensionVolumeName.text = 'volume'
-
-            dimensionVolumeItem = ET.SubElement(dimension, 'dimensionitem')
-            dimensionVolumeItem.text = str(line.product_id.volume)
-
-            dimensionWeightName = ET.SubElement(dimension, 'dimensionname')
-            dimensionWeightName.text = 'weight'
-
-            dimensionWeightItem = ET.SubElement(dimension, 'dimensionitem')
-            dimensionWeightItem.text = str(line.product_id.weight)
-            """
+                salesInvoiceProductLineQuantity = ET.SubElement(salesInvoiceProductLine, 'salesinvoiceproductlinequantity')
+                salesInvoiceProductLineQuantity.text = str(line.quantity)
+                            
+                salesInvoiceProductLineDiscountPercentage = ET.SubElement(salesInvoiceProductLine, 'salesinvoiceproductlinediscountpercentage')
+                salesInvoiceProductLineDiscountPercentage.text = str(line.discount)
 
 
         # TODO: Check XML naming invoiceLine/invoiceline. Smells fishy.
