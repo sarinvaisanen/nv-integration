@@ -270,7 +270,7 @@ class Netvisor(http.Controller):
             'in_payment': 'in_payment',
             'paid': 'paid',
             'cancel': 'cancel'
-        }
+        }  
 
         # Not required. Reference number format if given.
         salesInvoiceReferenceNumber = ET.SubElement(salesInvoice, 'salesinvoicereferencenumber')
@@ -292,7 +292,10 @@ class Netvisor(http.Controller):
 
         salesInvoiceStatus = ET.SubElement(salesInvoice, 'salesinvoicestatus')
         salesInvoiceStatus.set('type', 'netvisor')
-        salesInvoiceStatus.text = statuses.get(record.state)
+        if record.sent is False:
+            salesInvoiceStatus.text = 'unsent'
+        else:
+            salesInvoiceStatus.text = 'open'
 
         # Referenced value must exist in Netvisors invoicing customer records.
         invoicingCustomeridentifier = ET.SubElement(salesInvoice, 'invoicingcustomeridentifier')
