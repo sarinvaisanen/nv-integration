@@ -363,13 +363,21 @@ class NetvisorInvoice(models.Model):
                         'amount': float(str(netvisor_payment['Sum']).replace(",", ".")), # Required
                         'currency_id': 1, # Required
                         'payment_date': payment_date, # Required
-                        'journal_id': 1, # Required, 1 = Customer invoices
+                        # 'journal_id': 1, # Required, 1 = Customer invoices
                         'received_from_netvisor': True,
                         'received_from_netvisor_datetime': datetime.now(),
                         'netvisor_key': netvisor_payment['NetvisorKey'],
                         'partner_type': 'customer',
                         'partner_id': odoo_invoice.partner_id.id
                     })
+                    
+                    if odoo_payment.payment_method_id == 3:
+                        # Stripe journal
+                        odoo_payment.journal_id = 10
+                    else:
+                        # Bank journal
+                        odoo_payment.journal_id = 8
+                    
                     odoo_payment.invoice_ids = odoo_invoice
                     # print('Payment', odoo_payment)
                     if odoo_invoice.state == 'open':
