@@ -353,8 +353,8 @@ class NetvisorInvoice(models.Model):
                         'pankkikortti': 3, # inbound electronic
                         'käteinen': 1 # inbound manual
                     }
-                            
-                    odoo_payment = self.env['account.payment'].create({
+                    
+                    odoo_payment_data = {
                         'name': netvisor_payment['Name'],
                         'state': 'draft',
                         'payment_type': 'inbound', # Required
@@ -363,20 +363,24 @@ class NetvisorInvoice(models.Model):
                         'amount': float(str(netvisor_payment['Sum']).replace(",", ".")), # Required
                         'currency_id': 1, # Required
                         'payment_date': payment_date, # Required
-                        # 'journal_id': 1, # Required, 1 = Customer invoices
+                        'journal_id': 1, # Required, 1 = Customer invoices
                         'received_from_netvisor': True,
                         'received_from_netvisor_datetime': datetime.now(),
                         'netvisor_key': netvisor_payment['NetvisorKey'],
                         'partner_type': 'customer',
                         'partner_id': odoo_invoice.partner_id.id
-                    })
+                    }
                     
-                    if odoo_payment.payment_method_id == 3:
+                    if payment_method_map[payment_account_name] == 3:
                         # Stripe journal
-                        odoo_payment.journal_id = 10
+                        odoo_payment_data['journal_id'] = 10
                     else:
                         # Bank journal
-                        odoo_payment.journal_id = 8
+                        odoo_payment_data['journal_id'] = 8
+                            
+                    odoo_payment = self.env['account.payment'].create(odoo_payment_data)
+                    
+                    
                     
                     odoo_payment.invoice_ids = odoo_invoice
                     # print('Payment', odoo_payment)
