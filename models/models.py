@@ -383,7 +383,7 @@ class NetvisorInvoice(models.Model):
                         'amount': float(str(netvisor_payment['Sum']).replace(",", ".")), # Required
                         'currency_id': 1, # Required
                         'payment_date': payment_date, # Required
-                        'journal_id': record.journal_id, # Required
+                        'journal_id': record.journal_id.id, # Required
                         'received_from_netvisor': True,
                         'received_from_netvisor_datetime': datetime.now(),
                         'netvisor_key': netvisor_payment['NetvisorKey'],
