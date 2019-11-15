@@ -78,6 +78,26 @@ class NetvisorInvoice(models.Model):
     netvisor_data_identifier = fields.Integer(
         "Netvisor tunniste"
     )
+    
+    '''
+    @api.model
+    def write(self, values):
+        record = super(AccountInvoice, self).write(values)
+        print(self)
+        if (record.type is 'out_invoice' or record.type is 'out_refund') and record.netvisor_delivered is True and record.state is not 'paid':
+            api_url = self.env['ir.config_parameter'].sudo(
+            ).get_param('netvisor.api_url') 
+            root = controllers.Netvisor.xml_from_sales_invoice(record)
+            endpoint = f'{api_url}/salesinvoice.nv?method=edit'
+            
+       
+            headers = self.refresh_headers(endpoint)
+            response = requests.post(endpoint, headers=headers,
+                data=ET.tostring(root))
+            record = controllers.Netvisor.handle_send_invoice_response(response, record)
+        
+        return record
+    '''
 
     @api.one
     def send_invoice_to_netvisor(self, args):
@@ -363,27 +383,18 @@ class NetvisorInvoice(models.Model):
                         'amount': float(str(netvisor_payment['Sum']).replace(",", ".")), # Required
                         'currency_id': 1, # Required
                         'payment_date': payment_date, # Required
-                        'journal_id': 1, # Required, 1 = Customer invoices
+                        'journal_id': record.journal_id, # Required
                         'received_from_netvisor': True,
                         'received_from_netvisor_datetime': datetime.now(),
                         'netvisor_key': netvisor_payment['NetvisorKey'],
                         'partner_type': 'customer',
                         'partner_id': odoo_invoice.partner_id.id
                     }
-                    
-                    if payment_method_map[payment_account_name] == 3:
-                        # Stripe journal
-                        odoo_payment_data['journal_id'] = 10
-                    else:
-                        # Bank journal
-                        odoo_payment_data['journal_id'] = 8
                             
                     odoo_payment = self.env['account.payment'].create(odoo_payment_data)
                     
-                    
-                    
                     odoo_payment.invoice_ids = odoo_invoice
-                    # print('Payment', odoo_payment)
+
                     if odoo_invoice.state == 'open':
                         odoo_payment.post()
                     

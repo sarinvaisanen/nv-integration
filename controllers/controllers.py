@@ -378,7 +378,6 @@ class Netvisor(http.Controller):
             invoice_lines.append(comment_line)
 
         # TODO: Invoice voucher lines? Meaning?
-        ET.dump(root)
         return root
     
     
