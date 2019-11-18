@@ -146,7 +146,7 @@ class Netvisor(http.Controller):
         ourreference.text = record.reference
 
         yourreference = ET.SubElement(purchaseinvoice, 'yourreference')
-        yourreference.text = ''
+        yourreference.text = record.name
 
         currencycode = ET.SubElement(purchaseinvoice, 'currencycode')
         currencycode.text = record.currency_id.name
@@ -296,6 +296,12 @@ class Netvisor(http.Controller):
             salesInvoiceStatus.text = 'unsent'
         else:
             salesInvoiceStatus.text = 'open'
+            
+        ourReference = ET.SubElement(salesInvoice, 'salesinvoiceourreference')
+        ourReference.text = record.reference
+
+        yourReference = ET.SubElement(salesInvoice, 'salesinvoiceyourreference')
+        yourReference.text = record.name
 
         # Referenced value must exist in Netvisors invoicing customer records.
         invoicingCustomeridentifier = ET.SubElement(salesInvoice, 'invoicingcustomeridentifier')
@@ -378,6 +384,7 @@ class Netvisor(http.Controller):
             invoice_lines.append(comment_line)
 
         # TODO: Invoice voucher lines? Meaning?
+        ET.dump(root)
         return root
     
     
