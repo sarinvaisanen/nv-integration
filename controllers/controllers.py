@@ -273,8 +273,9 @@ class Netvisor(http.Controller):
         }  
 
         # Not required. Reference number format if given.
-        salesInvoiceReferenceNumber = ET.SubElement(salesInvoice, 'salesinvoicereferencenumber')
-        salesInvoiceReferenceNumber.text = str(record.ref_number)
+        if record.type is 'out_invoice':
+            salesInvoiceReferenceNumber = ET.SubElement(salesInvoice, 'salesinvoicereferencenumber')
+            salesInvoiceReferenceNumber.text = str(record.ref_number)
 
         salesInvoiceAmount = ET.SubElement(salesInvoice, 'salesinvoiceamount')
         salesInvoiceAmount.text = str(record.amount_total_signed)
