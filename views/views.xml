@@ -67,7 +67,7 @@
               'invisible': [
                 '|',
                 ('state','!=','open'),
-                ('type','!=','out_refund'),
+                ('state','!=','paid'),
                 ('netvisor_delivered', '=', True)
               ]
             }" groups="account.group_account_invoice"/>
