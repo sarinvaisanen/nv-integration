@@ -370,6 +370,8 @@ class NetvisorInvoice(models.Model):
                     payment_date = datetime.strptime(netvisor_payment['Date'], '%d.%m.%Y').strftime('%Y-%m-%d')
                     payment_account_name = netvisor_payment['PaymentAccountName'].lower()
                     payment_method_map = {
+                        'stripe': 3, # 
+                        'nordea': 1, # 
                         'pankkikortti': 3, # inbound electronic
                         'käteinen': 1 # inbound manual
                     }
