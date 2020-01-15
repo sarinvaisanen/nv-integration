@@ -307,7 +307,12 @@ class Netvisor(http.Controller):
         # Referenced value must exist in Netvisors invoicing customer records.
         invoicingCustomeridentifier = ET.SubElement(salesInvoice, 'invoicingcustomeridentifier')
         invoicingCustomeridentifier.set('type', 'customer')
-        invoicingCustomeridentifier.text = str(record.partner_id.netvisor_customer_id)
+        # Use parent record value if exists
+        if record.partner_id.parent_id.netvisor_customer_id is not False:
+            netvisor_customer_id = record.partner_id.parent_id.netvisor_customer_id
+        else:
+            netvisor_customer_id = record.partner_id.netvisor_customer_id
+        invoicingCustomeridentifier.text = str(netvisor_customer_id)
 
         '''
         # Invoicing customer fields given only if invoicingcustomeridentifier absent.
