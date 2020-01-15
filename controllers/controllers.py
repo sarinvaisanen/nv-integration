@@ -336,6 +336,11 @@ class Netvisor(http.Controller):
 
         # Invoice lines
         invoice_lines = ET.SubElement(salesInvoice, 'invoicelines')
+        
+        # Netvisor requires that invoice line quantity is given as negative number
+        sign = 1
+        if record.type == 'out_refund':
+            sign = -1
 
         for line in record.invoice_line_ids:
             invoiceLine = ET.SubElement(invoice_lines, 'invoiceLine')
@@ -367,7 +372,8 @@ class Netvisor(http.Controller):
                 productVatPercentage.text = str(vatPercentage)
 
                 salesInvoiceProductLineQuantity = ET.SubElement(salesInvoiceProductLine, 'salesinvoiceproductlinequantity')
-                salesInvoiceProductLineQuantity.text = str(line.quantity)
+                lineQuantity = line.quantity * sign
+                salesInvoiceProductLineQuantity.text = str(lineQuantity)
                             
                 salesInvoiceProductLineDiscountPercentage = ET.SubElement(salesInvoiceProductLine, 'salesinvoiceproductlinediscountpercentage')
                 salesInvoiceProductLineDiscountPercentage.text = str(line.discount)
