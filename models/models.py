@@ -382,7 +382,7 @@ class NetvisorInvoice(models.Model):
                         'payment_type': 'inbound', # Required
                         'payment_reference': netvisor_payment['ReferenceNumber'],
                         'payment_method_id': payment_method_map[payment_account_name], # Required 
-                        'amount': float(str(netvisor_payment['Sum']).replace(",", ".")), # Required
+                        'amount': abs(float(str(netvisor_payment['Sum']).replace(",", "."))), # Required
                         'currency_id': 1, # Required
                         'payment_date': payment_date, # Required
                         'journal_id': record.journal_id.id, # Required
