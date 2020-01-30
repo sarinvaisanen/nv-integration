@@ -355,7 +355,7 @@ class NetvisorInvoice(models.Model):
         for netvisor_invoice in netvisor_invoices_with_payments:
             odoo_invoice = self.search([
                 ('netvisor_data_identifier', '=', int(netvisor_invoice['SalesInvoiceNetvisorKey']))
-            ])
+            ], limit=1)
             
             if netvisor_invoice['MappedPayments'] != False:
                 for netvisor_payment in netvisor_invoice['MappedPayments']:
